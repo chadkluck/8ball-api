@@ -59,7 +59,7 @@ page-cache = 3600
 ; FORMAT:      Integer 0 through whatever
 ; DESCRIPTION: The number of seconds the browser should hold an api/page call in it''s cache
 ; RECOMMENDED: 3600 (1 hour) is good but adjust to your taste (NOTE: These are overriden with the value of 1 when DEBUG mode is invoked)
-;              Since this API is returning a new answer each time it is called, the api-cache should be set to 1
+;              Since the API is returning a new answer upon each request, api-cache should remain at 1
 ; DEFAULT:     3600
 
 
