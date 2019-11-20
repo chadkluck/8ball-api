@@ -56,8 +56,8 @@
     REQUIRED FUNCTIONS
 	********************************************************************************************
 
-	These functions are required for use with inc/lib/php-project-framework
-	Add your own code to them to make them usable for you
+	These functions are required for use with inc/lib/php-project-framework but are up to you
+	to develop and extend for your needs
 
 	********************************************************************************************
 */
@@ -65,7 +65,6 @@
 /* **************************************************************************
  *  userIsAdmin()
  *
- *  leave as is if your application does not require admin privileges/login
  */
 
 function userIsAdmin() {
@@ -73,33 +72,13 @@ function userIsAdmin() {
 }
 
 /* **************************************************************************
- *  getSecrets()
+ *  userIsUser()
  *
- *  Modify code to list any application variables that contain secrets which
- *  should not be divulged during debug print outs.
- *
- *  Powerful, indeed, but someone has to know what to redact
  */
 
-function getSecrets() {
-
-	// these are examples, replace them with your own
-	$secrets[] = getCfg("security")['oauth_secret'];
-	$secrets[] = getCfg("security")['oauth_clientid'];
-	$secrets[] = getCfg("security")['api_token'];
-	$secrets[] = getCfg("someApiService1")['apiKey'];
-	$secrets[] = getCfg("someApiService2")['apiKey'];
-	$secrets[] = getCfg("security")['password-hash'];
-	$secrets[] = getCfg("security")['google-authenticator'];
-	$secrets[] = getCfg("security")['key-store'][0];
-	$secrets[] = getCfg("security")['key-store'][1];
-	$secrets[] = getCfg("security")['key-store'][2];
-	$secrets[] = getCfg("security")['key-store'][3];
-	$secrets[] = getApp("user")['password-hash'];
-
-	// if new secrets are added during development, place them here
-
-	return $secrets;
+function userIsUser() {
+	return false;
 }
+
 
 ?>
